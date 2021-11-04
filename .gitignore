@@ -1,0 +1,6 @@
+.idea
+.env
+.lsenv
+.coverage
+__pycache__
+/tmp
