@@ -5,6 +5,6 @@ from .settings import app
 from .sevice import get_features
 
 
-@app.post("/mfcc/", response_model=MFCCResponse)
+@app.post("/py/mfcc/", response_model=MFCCResponse)
 async def root(file: UploadFile = File(...)):
     return get_features(file.file)
