@@ -27,4 +27,10 @@ def get_features(file):
     }
     mfcc_res = recursive_list(mfcc(**params, numcep=numcep))
 
+    if len(mfcc_res) < 450:
+        mfcc_res.extend([[0] * 20] * (450 - len(mfcc_res)))
+    elif len(mfcc_res) > 450:
+        mfcc_res = mfcc_res[:450]
+
+
     return MFCCResponse(mfcc=mfcc_res)
